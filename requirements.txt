@@ -1,0 +1,3 @@
+colomoto-jupyter>=0.8.7
+trappist
+biodivine-aeon

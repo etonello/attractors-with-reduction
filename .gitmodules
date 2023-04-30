@@ -1,0 +1,3 @@
+[submodule "3rdparty/mtsNFVS"]
+	path = 3rdparty/mtsNFVS
+	url = https://github.com/giang-trinh/mtsNFVS
