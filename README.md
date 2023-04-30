@@ -22,7 +22,7 @@ See the main in `attractor_computation.py` for an example of how to use the scri
 - [biodivine-aeon](https://github.com/sybila/biodivine-boolean-models)
 - [mtsNFVS](https://github.com/giang-trinh/mtsNFVS)
 
-In most environments, they can installed with the following commands:
+In most environments, they can be installed with the following commands:
 ```
 git submodule update --recursive --remote --init
 pip install -r requirements.txt
