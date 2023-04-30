@@ -1,0 +1,21 @@
+Sources:
+
+biodivine-boolean-models (https://github.com/sybila/biodivine-boolean-models):
+id-211-EPITHELIAL-DERIVED-CANCER-CELLS.bnet
+id-210-DRUG-SYNERGY-PREDICTION.bnet
+id-192-SEGMENT-POLARITY-6-CELL.bnet
+id-148-AGS-CELL-FATE-DECISION.bnet
+
+pyboolnet (https://github.com/hklarner/PyBoolNet/):
+grieco_mapk.bnet
+selvaggio_emt.bnet
+
+mtsNFVS (https://github.com/giang-trinh/mtsNFVS):
+A_model.bnet
+CASCADE3.bnet
+Colitis_associated_colon_cancer.bnet
+cell_cycle_2019.bnet
+IL_6_Signalling.bnet
+SIGNALING-IN-PROSTATE-CANCER.bnet
+TLGLSurvival.bnet
+

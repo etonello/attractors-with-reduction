@@ -1,0 +1,67 @@
+targets, factors
+AKT, ((PI3K & !(PP2A)) & !(CASP3))
+ASK1, (ROS & !(P21))
+ATM, ROS
+BAX, (((TBID & PP2A) & !(AKT)) | ((P53 & PP2A) & !(AKT)))
+BCATENIN, !((APC & GSK3B))
+BCL2, (((NFKB & !(P53)) & !(PP2A)) | ((STAT3 & !(P53)) & !(PP2A)))
+CASP3, ((CASP9 & !(IAP)) | (CASP8 & !(IAP)))
+CASP8, ((FADD & !(P21)) & !(CFLIP))
+CASP9, ((CYTC & !(P21)) & !(IAP))
+CCL2, NFKB
+CERAMIDE, (SMASE & !(SPHK1))
+CFLIP, NFKB
+COX2, (TNFR & S1P)
+CTL, (IFNG & !(TGFB))
+CYTC, MOMP
+DC, ((TNFA & !(IL10)) | (CCL2 & !(IL10)))
+EP2, PGE2
+ERK, MEK
+FADD, (TNFR | FAS)
+FAS, CTL
+GP130, IL6
+GSK3B, !((EP2 | AKT))
+IAP, ((NFKB & !(SMAC)) | (STAT3 & !(SMAC)))
+IFNG, (TH1 | CTL)
+IKB, !(IKK)
+IKK, (AKT | (TNFR & S1P))
+IL10, (TREG | TH2)
+IL12, (MAC | DC)
+IL4, (DC | TH2)
+IL6, ((NFKB | DC) | MAC)
+JAK, (GP130 & !(SOCS))
+JNK, (MEKK1 | ASK1)
+JUN, (((ERK & JNK) & !(GSK3B)) | ((BCATENIN & JNK) & !(GSK3B)))
+MAC, ((IFNG & !(IL10)) | (CCL2 & !(IL10)))
+MDM2, (((P53 & AKT) & !(GSK3B)) & !(ATM))
+MEK, (ROS | RAF)
+MEKK1, ((TNFR | CERAMIDE) | TGFR)
+MOMP, (((CERAMIDE & !(BCL2)) | (BAX & !(BCL2))) | (TBID & !(BCL2)))
+NFKB, !(IKB)
+P21, (((SMAD & !(CASP3)) & !(GSK3B)) | ((P53 & !(CASP3)) & !(GSK3B)))
+P53, (((JNK & !(MDM2)) | (PTEN & !(MDM2))) | (ATM & !(MDM2)))
+PGE2, COX2
+PI3K, ((RAS & !(PTEN)) | (EP2 & !(PTEN)))
+PP2A, (CERAMIDE & !(AKT))
+PTEN, ((P53 & !(NFKB)) & !(JUN))
+RAF, (CERAMIDE | RAS)
+RAS, (EP2 | GP130)
+ROS, (TNFR & !(SOD))
+S1P, SPHK1
+SMAC, MOMP
+SMAD, (TGFR & !(JUN))
+SMAD7, (SMAD | NFKB)
+SMASE, (P53 | FADD)
+SOCS, STAT3
+SOD, (STAT3 | NFKB)
+SPHK1, (TNFR | ERK)
+STAT3, JAK
+TBID, (CASP8 & !(BCL2))
+TGFB, TREG
+TGFR, (TGFB & !(SMAD7))
+TH1, ((((IL12 & !(IL10)) & !(IL4)) & !(TGFB)) | (((IFNG & !(IL10)) & !(IL4)) & !(TGFB)))
+TH2, ((IL4 & !(IFNG)) & !(TGFB))
+TNFA, MAC
+TNFR, TNFA
+TREG, ((DC & !(IL6)) | (IL10 & !(IL6)))
+APC, APC
