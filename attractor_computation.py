@@ -243,17 +243,26 @@ def find_attractors_with_reduction(bnet_path, stop_at=None, max_product=None, ca
     return steady, cyclic, info
 
 if __name__=="__main__":
-    import os
-    bnet_dir = "networks/bio-models"
-    candidates, nonunivocal = 0, 0
-    for k, bnet_file in enumerate(sorted(os.listdir(bnet_dir))):
-        bnet_path = os.path.join(bnet_dir, bnet_file)
-        print(bnet_file, flush=True)
-        t0 = time()
-        result = find_attractors_with_reduction(bnet_path, stop_at=None, max_product=None, verbose=True, candidate_method="AEON")
-        if result is not None:
-            steady, cyclic, info = result
-            print(f"{len(steady)} steady, {len(cyclic)} cyclic, {time() - t0:.1f} seconds.\n", flush=True)
-            candidates += info["n_cand"]
-            nonunivocal += info["n_nuniv"]
-    print(f"{k+1} networks, {candidates} candidate nonmaximal states, {nonunivocal} candidate nonunivocal states.")
+    import sys
+    from argparse import ArgumentParser
+
+    ap = ArgumentParser()
+    ap.add_argument("bnet", help="Boolean network model as BoolNet format (.bnet)")
+    ap.add_argument("--tool", choices=["AEON", "mtsNFVS"], default="AEON", help="tool for computing attractors on the reduced net")
+    ap.add_argument("--stop_at", default=None)
+    ap.add_argument("--max_product", default=None)
+    args = ap.parse_args()
+
+    stop_at, max_product = args.stop_at, args.max_product
+    if stop_at is not None: stop_at = int(stop_at)
+    if max_product is not None: max_product = int(max_product)
+
+    bnet_path = args.bnet
+    t0 = time()
+    result = find_attractors_with_reduction(bnet_path, stop_at=stop_at,
+                                                max_product=max_product,
+                                                verbose=True,
+                                                candidate_method=args.tool)
+    if result is not None:
+        steady, cyclic, info = result
+        print(f"{len(steady)} steady, {len(cyclic)} cyclic, {time() - t0:.1f} seconds.\n")

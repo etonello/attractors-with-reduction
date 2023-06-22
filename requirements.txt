@@ -1,3 +1,4 @@
+boolean.py>=4.0
 colomoto-jupyter>=0.8.7
 trappist
-biodivine-aeon
+biodivine-aeon<0.2

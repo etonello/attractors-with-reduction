@@ -16,14 +16,44 @@ for the computation of minimal trap spaces.
 
 See the main in `attractor_computation.py` for an example of how to use the scripts.
 
-## Requirements
+## Instructions
+
+### Requirements
+- [clingo](https://potassco.org/clingo)
 - [colomoto-jupyter](https://github.com/colomoto/colomoto-jupyter)
 - [trappist](https://github.com/soli/trap-spaces-as-siphons)
 - [biodivine-aeon](https://github.com/sybila/biodivine-boolean-models)
 - [mtsNFVS](https://github.com/giang-trinh/mtsNFVS)
+- [Z3](https://github.com/Z3Prover/z3/releases/) -- libz3.so and libz3java.so must be in the LD_LIBRARY_PATH
 
-In most environments, they can be installed with the following commands:
+### Installation
 ```
 git submodule update --recursive --remote --init
 pip install -r requirements.txt
 ```
+
+### Usage
+
+```
+python attractor_computation.py file.bnet
+```
+
+See `--help` for configuraiton reduction and tool for computing attractors on
+reduced network.
+
+:warning: The warnings about missing MiniZinc are harmless.
+
+## Docker image
+
+- Pull image
+    ```
+    docker pull colomoto/attractors-with-reduction
+    ```
+- Get options
+    ```
+    docker run --rm colomoto/attractors-with-reduction --help
+    ```
+- Run on given Boolean network
+    ```
+    ./docker-run file.bnet [options..]
+    ```
