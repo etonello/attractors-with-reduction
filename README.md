@@ -38,8 +38,8 @@ pip install -r requirements.txt
 python attractor_computation.py file.bnet
 ```
 
-See `--help` for configuraiton reduction and tool for computing attractors on
-reduced network.
+Please refer to the `--help` option for information on configuration of reduction parameters
+and choice of tool to compute attractors on the reduced network.
 
 :warning: The warnings about missing MiniZinc are harmless.
 
